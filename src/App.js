@@ -1012,81 +1012,81 @@ const App = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 flex items-center justify-center p-4 font-inter text-gray-900">
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-2xl w-full max-w-2xl border border-gray-300"> {}
-                <h1 className="text-3xl sm:text-4xl font-extrabold text-center mb-6 sm:mb-8 text-indigo-800"> {}
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-2xl w-full max-w-2xl border border-gray-300"> 
+                <h1 className="text-3xl sm:text-4xl font-extrabold text-center mb-6 sm:mb-8 text-indigo-800"> 
                     Mock Trial Timer
                 </h1>
 
                 {showSettings ? (
                     // Settings View
-                    <div className="space-y-4 sm:space-y-6"> {}
-                        <h2 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-4 sm:mb-6 text-center">Trial Configuration</h2> {}
+                    <div className="space-y-4 sm:space-y-6"> 
+                        <h2 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-4 sm:mb-6 text-center">Trial Configuration</h2> 
 
                         {/* Mode Selection */}
-                        <div className="flex flex-col sm:flex-row justify-center mb-4 sm:mb-6 space-y-2 sm:space-y-0 sm:space-x-4"> {}
+                        <div className="flex flex-col sm:flex-row justify-center mb-4 sm:mb-6 space-y-2 sm:space-y-0 sm:space-x-4"> 
                             <label className="inline-flex items-center cursor-pointer">
                                 <input
                                     type="radio"
-                                    className="form-radio text-blue-600 h-4 w-4 sm:h-5 sm:w-5 rounded-full accent-blue-600" {}
+                                    className="form-radio text-blue-600 h-4 w-4 sm:h-5 sm:w-5 rounded-full accent-blue-600" 
                                     name="configMode"
                                     value="simple"
                                     checked={configMode === 'simple'}
                                     onChange={() => setConfigMode('simple')}
                                 />
-                                <span className="ml-2 text-base sm:text-lg text-gray-700">Simple Mode</span> {}
+                                <span className="ml-2 text-base sm:text-lg text-gray-700">Simple Mode</span> 
                             </label>
                             <label className="inline-flex items-center cursor-pointer">
                                 <input
                                     type="radio"
-                                    className="form-radio text-blue-600 h-4 w-4 sm:h-5 sm:w-5 rounded-full accent-blue-600" {}
+                                    className="form-radio text-blue-600 h-4 w-4 sm:h-5 sm:w-5 rounded-full accent-blue-600" 
                                     name="configMode"
                                     value="advanced"
                                     checked={configMode === 'advanced'}
                                     onChange={() => setConfigMode('advanced')}
                                 />
-                                <span className="ml-2 text-base sm:text-lg text-gray-700">Advanced Mode</span> {}
+                                <span className="ml-2 text-base sm:text-lg text-gray-700">Advanced Mode</span> 
                             </label>
                         </div>
 
                         {/* Witness Count Settings */}
-                        <div className="bg-purple-50 p-4 sm:p-5 rounded-xl shadow-sm border border-purple-200"> {}
-                            <h3 className="text-lg sm:text-xl font-semibold text-purple-800 mb-2 sm:mb-3">Number of Witnesses</h3> {}
+                        <div className="bg-purple-50 p-4 sm:p-5 rounded-xl shadow-sm border border-purple-200"> 
+                            <h3 className="text-lg sm:text-xl font-semibold text-purple-800 mb-2 sm:mb-3">Number of Witnesses</h3> 
                             {configMode === 'simple' ? (
                                 <div className="flex items-center space-x-2 justify-between">
-                                    <label htmlFor="simple-witness-count" className="text-base sm:text-lg font-medium text-gray-700">Per Side:</label> {}
+                                    <label htmlFor="simple-witness-count" className="text-base sm:text-lg font-medium text-gray-700">Per Side:</label> 
                                     <input
                                         id="simple-witness-count"
                                         type="number"
                                         min="0"
                                         value={trialConfig.plaintiffWitnessCount} // Use plaintiff as the source for simple mode
                                         onChange={(e) => handleWitnessCountChange('plaintiffWitnessCount', e.target.value)}
-                                        className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" {}
+                                        className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" 
                                         aria-label="Number of Witnesses per Side"
                                     />
                                 </div>
                             ) : (
-                                <div className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0 sm:space-x-4"> {}
+                                <div className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0 sm:space-x-4"> 
                                     <div className="flex items-center space-x-2">
-                                        <label htmlFor="plaintiff-witness-count" className="text-base sm:text-lg font-medium text-gray-700">Plaintiff:</label> {}
+                                        <label htmlFor="plaintiff-witness-count" className="text-base sm:text-lg font-medium text-gray-700">Plaintiff:</label> 
                                         <input
                                             id="plaintiff-witness-count"
                                             type="number"
                                             min="0"
                                             value={trialConfig.plaintiffWitnessCount}
                                             onChange={(e) => handleWitnessCountChange('plaintiffWitnessCount', e.target.value)}
-                                            className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" {}
+                                            className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" 
                                             aria-label="Number of Plaintiff Witnesses"
                                         />
                                     </div>
                                     <div className="flex items-center space-x-2">
-                                        <label htmlFor="defense-witness-count" className="text-base sm:text-lg font-medium text-gray-700">Defense:</label> {}
+                                        <label htmlFor="defense-witness-count" className="text-base sm:text-lg font-medium text-gray-700">Defense:</label> 
                                         <input
                                             id="defense-witness-count"
                                             type="number"
                                             min="0"
                                             value={trialConfig.defenseWitnessCount}
                                             onChange={(e) => handleWitnessCountChange('defenseWitnessCount', e.target.value)}
-                                            className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" {}
+                                            className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" 
                                             aria-label="Number of Defense Witnesses"
                                         />
                                     </div>
@@ -1095,68 +1095,68 @@ const App = () => {
                         </div>
 
                         {/* Phase Duration Settings */}
-                        <div className="bg-blue-50 p-4 sm:p-5 rounded-xl shadow-sm border border-blue-200"> {}
-                            <h3 className="text-lg sm:text-xl font-semibold text-blue-800 mb-2 sm:mb-3">Phase Durations (Minutes)</h3> {}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"> {}
+                        <div className="bg-blue-50 p-4 sm:p-5 rounded-xl shadow-sm border border-blue-200"> 
+                            <h3 className="text-lg sm:text-xl font-semibold text-blue-800 mb-2 sm:mb-3">Phase Durations (Minutes)</h3> 
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"> 
                                 {configMode === 'simple' ? (
                                     <>
                                         <div className="flex items-center justify-between">
-                                            <label htmlFor="simple-opening-duration" className="text-base sm:text-lg font-medium text-gray-800">Opening:</label> {}
+                                            <label htmlFor="simple-opening-duration" className="text-base sm:text-lg font-medium text-gray-800">Opening:</label> 
                                             <input
                                                 id="simple-opening-duration"
                                                 type="number"
                                                 min="0"
                                                 value={Math.floor(trialConfig.pOpeningDuration / 60)}
                                                 onChange={(e) => handleDurationChange('pOpeningDuration', e.target.value)}
-                                                className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" {}
+                                                className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" 
                                                 aria-label="Opening duration in minutes"
                                             />
                                         </div>
                                         <div className="flex items-center justify-between">
-                                            <label htmlFor="simple-directs-duration" className="text-base sm:text-lg font-medium text-gray-800">Directs:</label> {}
+                                            <label htmlFor="simple-directs-duration" className="text-base sm:text-lg font-medium text-gray-800">Directs:</label> 
                                             <input
                                                 id="simple-directs-duration"
                                                 type="number"
                                                 min="0"
                                                 value={Math.floor(trialConfig.pOverallDirectDuration / 60)}
                                                 onChange={(e) => handleDurationChange('pOverallDirectDuration', e.target.value)}
-                                                className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" {}
+                                                className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" 
                                                 aria-label="Directs duration in minutes"
                                             />
                                         </div>
                                         <div className="flex items-center justify-between">
-                                            <label htmlFor="simple-crosses-duration" className="text-base sm:text-lg font-medium text-gray-800">Crosses:</label> {}
+                                            <label htmlFor="simple-crosses-duration" className="text-base sm:text-lg font-medium text-gray-800">Crosses:</label> 
                                             <input
                                                 id="simple-crosses-duration"
                                                 type="number"
                                                 min="0"
                                                 value={Math.floor(trialConfig.dOverallCrossDuration / 60)}
                                                 onChange={(e) => handleDurationChange('dOverallCrossDuration', e.target.value)}
-                                                className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" {}
+                                                className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" 
                                                 aria-label="Crosses duration in minutes"
                                             />
                                         </div>
                                         <div className="flex items-center justify-between">
-                                            <label htmlFor="simple-closing-duration" className="text-base sm:text-lg font-medium text-gray-800">Closing:</label> {}
+                                            <label htmlFor="simple-closing-duration" className="text-base sm:text-lg font-medium text-gray-800">Closing:</label> 
                                             <input
                                                 id="simple-closing-duration"
                                                 type="number"
                                                 min="0"
                                                 value={Math.floor(trialConfig.pClosingDuration / 60)}
                                                 onChange={(e) => handleDurationChange('pClosingDuration', e.target.value)}
-                                                className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" {}
+                                                className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" 
                                                 aria-label="Closing duration in minutes"
                                             />
                                         </div>
                                         <div className="flex items-center justify-between">
-                                            <label htmlFor="simple-rebuttal-duration" className="text-base sm:text-lg font-medium text-gray-800">Max Rebuttal Time:</label> {}
+                                            <label htmlFor="simple-rebuttal-duration" className="text-base sm:text-lg font-medium text-gray-800">Max Rebuttal Time:</label> 
                                             <input
                                                 id="simple-rebuttal-duration"
                                                 type="number"
                                                 min="0"
                                                 value={Math.floor(trialConfig.maxRebuttalDuration / 60)}
                                                 onChange={(e) => handleDurationChange('maxRebuttalDuration', e.target.value)}
-                                                className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" {}
+                                                className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" 
                                                 aria-label="Max Rebuttal duration in minutes"
                                             />
                                         </div>
@@ -1172,14 +1172,14 @@ const App = () => {
                                             maxRebuttalDuration: 'Max Rebuttal Time',
                                         }).map(([key, name]) => (
                                             <div key={key} className="flex items-center justify-between">
-                                                <label htmlFor={`${key}-duration`} className="text-base sm:text-lg font-medium text-gray-800">{name}:</label> {}
+                                                <label htmlFor={`${key}-duration`} className="text-base sm:text-lg font-medium text-gray-800">{name}:</label> 
                                                 <input
                                                     id={`${key}-duration`}
                                                     type="number"
                                                     min="0"
                                                     value={Math.floor(trialConfig[key] / 60)} // Display in minutes
                                                     onChange={(e) => handleDurationChange(key, e.target.value)}
-                                                    className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" {}
+                                                    className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" 
                                                     aria-label={`${name} duration in minutes`}
                                                 />
                                             </div>
@@ -1192,14 +1192,14 @@ const App = () => {
                                             pOverallCrossDuration: 'P. Crosses (D. Wits)',
                                         }).map(([key, name]) => (
                                             <div key={key} className="flex items-center justify-between">
-                                                <label htmlFor={`${key}-duration`} className="text-base sm:text-lg font-medium text-gray-800">{name}:</label> {}
+                                                <label htmlFor={`${key}-duration`} className="text-base sm:text-lg font-medium text-gray-800">{name}:</label> 
                                                 <input
                                                     id={`${key}-duration`}
                                                     type="number"
                                                     min="0"
                                                     value={Math.floor(trialConfig[key] / 60)} // Display in minutes
                                                     onChange={(e) => handleDurationChange(key, e.target.value)}
-                                                    className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" {}
+                                                    className="w-16 sm:w-20 p-1.5 sm:p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-center text-base sm:text-lg" 
                                                     aria-label={`${name} duration in minutes`}
                                                 />
                                             </div>
@@ -1210,11 +1210,11 @@ const App = () => {
                         </div>
 
                         {/* Show/Hide Total Side Times Toggle */}
-                        <div className="bg-gray-50 p-4 sm:p-5 rounded-xl shadow-sm border border-gray-200 flex items-center justify-between"> {}
-                            <label className="text-base sm:text-lg font-medium text-gray-700 flex items-center cursor-pointer"> {}
+                        <div className="bg-gray-50 p-4 sm:p-5 rounded-xl shadow-sm border border-gray-200 flex items-center justify-between"> 
+                            <label className="text-base sm:text-lg font-medium text-gray-700 flex items-center cursor-pointer"> 
                                 <input
                                     type="checkbox"
-                                    className="form-checkbox h-4 w-4 sm:h-5 sm:w-5 text-blue-600 rounded accent-blue-600" {}
+                                    className="form-checkbox h-4 w-4 sm:h-5 sm:w-5 text-blue-600 rounded accent-blue-600" 
                                     checked={trialConfig.showTotalSideTimes}
                                     onChange={handleToggleShowTotalSideTimes}
                                 />
@@ -1231,14 +1231,14 @@ const App = () => {
                     </div>
                 ) : (
                     // Timer View
-                    <div className="text-center space-y-4 sm:space-y-6"> {}
-                        <div className="bg-purple-100 p-4 sm:p-6 rounded-xl shadow-md border border-purple-300"> {}
-                            <h2 className="text-xl sm:text-3xl font-semibold text-purple-800 mb-1 sm:mb-2">Current Phase:</h2> {}
-                            <p className="text-3xl sm:text-5xl font-extrabold text-purple-900 drop-shadow-md"> {}
+                    <div className="text-center space-y-4 sm:space-y-6"> 
+                        <div className="bg-purple-100 p-4 sm:p-6 rounded-xl shadow-md border border-purple-300"> 
+                            <h2 className="text-xl sm:text-3xl font-semibold text-purple-800 mb-1 sm:mb-2">Current Phase:</h2> 
+                            <p className="text-3xl sm:text-5xl font-extrabold text-purple-900 drop-shadow-md"> 
                                 {currentSegment ? currentSegment.name : 'Trial Not Started'}
                             </p>
                             {currentSegment && currentSegment.side && currentSegment.type !== 'end' && (
-                                <p className={`text-lg sm:text-2xl font-medium mt-0.5 sm:mt-1 ${currentSegment.side === 'plaintiff' ? 'text-green-700' : 'text-red-700'}`}> {}
+                                <p className={`text-lg sm:text-2xl font-medium mt-0.5 sm:mt-1 ${currentSegment.side === 'plaintiff' ? 'text-green-700' : 'text-red-700'}`}> 
                                     ({currentSegment.side.charAt(0).toUpperCase() + currentSegment.side.slice(1)} Side)
                                 </p>
                             )}
@@ -1246,24 +1246,24 @@ const App = () => {
 
                         {/* Total Elapsed Time for P and D (derived from useMemo) - Conditionally Rendered */}
                         {trialConfig.showTotalSideTimes && (
-                            <div className="flex flex-col sm:flex-row justify-around items-center bg-gray-50 p-3 sm:p-4 rounded-xl shadow-md border border-gray-200 text-base sm:text-lg font-semibold space-y-2 sm:space-y-0"> {}
+                            <div className="flex flex-col sm:flex-row justify-around items-center bg-gray-50 p-3 sm:p-4 rounded-xl shadow-md border border-gray-200 text-base sm:text-lg font-semibold space-y-2 sm:space-y-0"> 
                                 <div className="flex flex-col items-center">
                                     <span className="text-green-700">Plaintiff Total:</span>
-                                    <span className="text-gray-900 text-lg sm:text-xl">{formatTime(derivedTotalPlaintiffElapsed)}</span> {}
+                                    <span className="text-gray-900 text-lg sm:text-xl">{formatTime(derivedTotalPlaintiffElapsed)}</span> 
                                 </div>
                                 <div className="w-px h-12 bg-gray-300 hidden sm:block"></div> {/* Separator */}
                                 <div className="flex flex-col items-center">
                                     <span className="text-red-700">Defense Total:</span>
-                                    <span className="text-gray-900 text-lg sm:text-xl">{formatTime(derivedTotalDefenseElapsed)}</span> {}
+                                    <span className="text-gray-900 text-lg sm:text-xl">{formatTime(derivedTotalDefenseElapsed)}</span> 
                                 </div>
                             </div>
                         )}
 
                         {/* Current Segment Timer Display - Only show if not 'end' segment */}
                         {currentSegment && currentSegment.type !== 'end' && (
-                            <div className="flex flex-col sm:flex-row justify-around items-center bg-yellow-50 p-4 sm:p-6 rounded-xl shadow-md border border-yellow-200 space-y-4 sm:space-y-0"> {}
+                            <div className="flex flex-col sm:flex-row justify-around items-center bg-yellow-50 p-4 sm:p-6 rounded-xl shadow-md border border-yellow-200 space-y-4 sm:space-y-0"> 
                                 <div className="flex flex-col items-center">
-                                    <p className="text-lg sm:text-2xl font-medium text-gray-700">Time Elapsed <br className="sm:hidden" /> (Current Segment):</p> {}
+                                    <p className="text-lg sm:text-2xl font-medium text-gray-700">Time Elapsed <br className="sm:hidden" /> (Current Segment):</p> 
                                     <p className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 mt-1 sm:mt-2"> {/* **Dynamically scaled font size** */}
                                         {formatTime(currentSegmentElapsed)}
                                     </p>
@@ -1274,7 +1274,7 @@ const App = () => {
                                             className="mt-1 sm:mt-2 text-blue-600 hover:text-blue-800 text-sm font-semibold flex items-center transition duration-150 ease-in-out hover:underline"
                                             title="Edit current segment time"
                                         >
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-1" viewBox="0 0 24 24" fill="currentColor"> {}
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-1" viewBox="0 0 24 24" fill="currentColor"> 
                                                 <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                                             </svg>
                                             Edit Current Time
@@ -1283,7 +1283,7 @@ const App = () => {
                                 </div>
                                 <div className="w-full h-px bg-gray-300 sm:w-px sm:h-24 mx-0 sm:mx-8"></div> {/* Responsive separator */}
                                 <div className="flex flex-col items-center">
-                                    <p className="text-lg sm:text-2xl font-medium text-gray-700"> {}
+                                    <p className="text-lg sm:text-2xl font-medium text-gray-700"> 
                                         {displayRemainingTime.type === 'fixed' ? 'Time Remaining:' : 'Time Remaining:'}
                                     </p>
                                     <p className={`text-5xl sm:text-6xl md:text-7xl font-extrabold mt-1 sm:mt-2 ${ /* **Dynamically scaled font size** */
@@ -1299,7 +1299,7 @@ const App = () => {
                                     </p>
                                     {/* Display Overtime if applicable */}
                                     {displayRemainingTime.overtime > 0 && (
-                                        <p className="text-lg sm:text-xl font-bold text-red-600 mt-1 sm:mt-2"> {}
+                                        <p className="text-lg sm:text-xl font-bold text-red-600 mt-1 sm:mt-2"> 
                                             Overtime: +{formatTime(displayRemainingTime.overtime)}
                                         </p>
                                     )}
@@ -1310,7 +1310,7 @@ const App = () => {
                                             className="mt-1 sm:mt-2 text-blue-600 hover:text-blue-800 text-sm font-semibold flex items-center transition duration-150 ease-in-out hover:underline"
                                             title="Edit total budget time"
                                         >
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-1" viewBox="0 0 24 24" fill="currentColor"> {}
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-1" viewBox="0 0 24 24" fill="currentColor"> 
                                                 <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                                             </svg>
                                             Edit Remaining
@@ -1323,7 +1323,7 @@ const App = () => {
                                             className="mt-1 sm:mt-2 text-blue-600 hover:text-blue-800 text-sm font-semibold flex items-center transition duration-150 ease-in-out hover:underline"
                                             title="Edit remaining time"
                                         >
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-1" viewBox="0 0 24 24" fill="currentColor"> {}
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-1" viewBox="0 0 24 24" fill="currentColor"> 
                                                 <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                                             </svg>
                                             Edit Remaining
@@ -1336,7 +1336,7 @@ const App = () => {
                         {/* Control Buttons */}
                         {/* Control buttons are always visible unless a general purpose modal (edit or confirm) or a redirect/recross prompt is open */}
                         {!(showEditModal || showConfirmResetCurrent || showConfirmFullReset || showRedirectPrompt || showRecrossPrompt) && currentSegment && currentSegment.type !== 'end' && (
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-4 sm:mt-6"> {}
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-4 sm:mt-6"> 
                                 {/* Start/Pause */}
                                 <button
                                     onClick={toggleTimer}
@@ -1345,14 +1345,14 @@ const App = () => {
                                 >
                                     {isRunning ? (
                                         <span className="flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6 mr-1.5 sm:mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"> {}
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6 mr-1.5 sm:mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"> 
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
                                             Pause
                                         </span>
                                     ) : (
                                         <span className="flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6 mr-1.5 sm:mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"> {}
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6 mr-1.5 sm:mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"> 
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197 2.132A1 1 0 0110 13.82V9.18a1 1 0 011.555-.832l3.197 2.132a1 1 0 010 1.664z" />
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
@@ -1366,7 +1366,7 @@ const App = () => {
                                     disabled={currentSegmentIndex === 0}
                                     className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-105 shadow-md active:shadow-inner flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed text-base sm:text-lg" // Adjusted padding and font size
                                 >
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6 mr-1.5 sm:mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"> {}
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6 mr-1.5 sm:mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"> 
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
                                     </svg>
                                     Previous
@@ -1378,7 +1378,7 @@ const App = () => {
                                     className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-105 shadow-md active:shadow-inner flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed text-base sm:text-lg" // Adjusted padding and font size
                                 >
                                     Next
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6 ml-1.5 sm:ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"> {}
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6 ml-1.5 sm:ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"> 
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
                                     </svg>
                                 </button>
@@ -1387,7 +1387,7 @@ const App = () => {
                                     onClick={requestResetCurrentPhase}
                                     className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-105 shadow-md active:shadow-inner flex items-center justify-center text-base sm:text-lg" // Adjusted padding and font size
                                 >
-                                    <RotateCcw className="h-5 w-5 sm:h-6 sm:w-6 mr-1.5 sm:mr-2" /> {}
+                                    <RotateCcw className="h-5 w-5 sm:h-6 sm:w-6 mr-1.5 sm:mr-2" /> 
                                     Reset Current
                                 </button>
                                 {/* Full Reset */}
@@ -1395,7 +1395,7 @@ const App = () => {
                                     onClick={requestFullReset}
                                     className="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-105 shadow-md active:shadow-inner flex items-center justify-center col-span-1 sm:col-span-1 text-base sm:text-lg" // Adjusted padding and font size, ensured col-span on mobile
                                 >
-                                    <RefreshCcw className="h-5 w-5 sm:h-6 sm:w-6 mr-1.5 sm:mr-2" /> {}
+                                    <RefreshCcw className="h-5 w-5 sm:h-6 sm:w-6 mr-1.5 sm:mr-2" /> 
                                     Full Reset
                                 </button>
                             </div>
@@ -1404,11 +1404,11 @@ const App = () => {
                         {/* Redirect Prompt */}
                         {showRedirectPrompt && currentSegment && (
                             <div className="fixed inset-0 bg-gray-600 bg-opacity-70 overflow-y-auto h-full w-full flex items-center justify-center z-50 p-4">
-                                <div className="bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-sm mx-auto border-2 border-indigo-400 text-center animate-fade-in-up"> {}
-                                    <h3 className="text-lg sm:text-xl font-semibold text-indigo-800 mb-4 sm:mb-6"> {}
+                                <div className="bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-sm mx-auto border-2 border-indigo-400 text-center animate-fade-in-up"> 
+                                    <h3 className="text-lg sm:text-xl font-semibold text-indigo-800 mb-4 sm:mb-6"> 
                                         {`P Witness ${currentSegment.witnessIndex + 1} - Cross finished. Is there a Redirect?`}
                                     </h3>
-                                    <div className="flex justify-center space-x-3 sm:space-x-4"> {}
+                                    <div className="flex justify-center space-x-3 sm:space-x-4"> 
                                         <button
                                             onClick={() => handleRedirectDecisionPrompt(true)}
                                             className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2.5 sm:py-3 px-5 sm:px-6 rounded-xl transition duration-300 ease-in-out transform hover:scale-105 shadow-md text-base sm:text-lg" // Adjusted padding and font size
@@ -1429,11 +1429,11 @@ const App = () => {
                         {/* Recross Prompt */}
                         {showRecrossPrompt && currentSegment && (
                             <div className="fixed inset-0 bg-gray-600 bg-opacity-70 overflow-y-auto h-full w-full flex items-center justify-center z-50 p-4">
-                                <div className="bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-sm mx-auto border-2 border-indigo-400 text-center animate-fade-in-up"> {}
-                                    <h3 className="text-lg sm:text-xl font-semibold text-indigo-800 mb-4 sm:mb-6"> {}
+                                <div className="bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-sm mx-auto border-2 border-indigo-400 text-center animate-fade-in-up"> 
+                                    <h3 className="text-lg sm:text-xl font-semibold text-indigo-800 mb-4 sm:mb-6"> 
                                         {`P Witness ${currentSegment.witnessIndex + 1} - Redirect finished. Is there a Recross?`}
                                     </h3>
-                                    <div className="flex justify-center space-x-3 sm:space-x-4"> {}
+                                    <div className="flex justify-center space-x-3 sm:space-x-4"> 
                                         <button
                                             onClick={() => handleRecrossDecisionPrompt(true)}
                                             className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2.5 sm:py-3 px-5 sm:px-6 rounded-xl transition duration-300 ease-in-out transform hover:scale-105 shadow-md text-base sm:text-lg" // Adjusted padding and font size
@@ -1453,9 +1453,9 @@ const App = () => {
 
                         {/* Trial Ended Message */}
                         {currentSegment && currentSegment.type === 'end' && (
-                            <div className="bg-green-100 p-4 sm:p-6 rounded-xl shadow-md border border-green-300 mt-4 sm:mt-6 mb-4 sm:mb-6"> {}
-                                <h3 className="text-2xl sm:text-3xl font-bold text-green-800">Trial Ended!</h3> {}
-                                <p className="text-base sm:text-xl text-gray-700 mt-1.5 sm:mt-2 mb-3 sm:mb-4">All phases completed.</p> {}
+                            <div className="bg-green-100 p-4 sm:p-6 rounded-xl shadow-md border border-green-300 mt-4 sm:mt-6 mb-4 sm:mb-6"> 
+                                <h3 className="text-2xl sm:text-3xl font-bold text-green-800">Trial Ended!</h3> 
+                                <p className="text-base sm:text-xl text-gray-700 mt-1.5 sm:mt-2 mb-3 sm:mb-4">All phases completed.</p> 
                                 {/* New button to go back to settings */}
                                 <button
                                     onClick={requestFullReset} // This function already handles resetting and showing settings
@@ -1467,9 +1467,9 @@ const App = () => {
                         )}
 
                         {/* Trial Summary - Always Visible */}
-                        <div ref={trialSummaryRef} className="bg-white p-4 rounded-xl shadow-inner border border-gray-200 text-left mt-4 sm:mt-6"> {}
+                        <div ref={trialSummaryRef} className="bg-white p-4 rounded-xl shadow-inner border border-gray-200 text-left mt-4 sm:mt-6"> 
                             <div className="flex flex-col sm:flex-row justify-between items-center mb-2 sm:mb-3 border-b-2 border-gray-200 pb-2 space-y-2 sm:space-y-0"> {/* Added flex-col and spacing for mobile */}
-                                <h4 className="text-xl sm:text-2xl font-semibold text-gray-800 ">Trial Summary</h4> {}
+                                <h4 className="text-xl sm:text-2xl font-semibold text-gray-800 ">Trial Summary</h4> 
                                 <button
                                     onClick={generatePdf}
                                     // Disable the button until the PDF libraries are loaded
@@ -1478,7 +1478,7 @@ const App = () => {
                                 >
                                     {isGeneratingPdf ? (
                                         <span className="flex items-center">
-                                            <svg className="animate-spin -ml-1 mr-1.5 h-3 w-3 sm:h-4 sm:w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"> {}
+                                            <svg className="animate-spin -ml-1 mr-1.5 h-3 w-3 sm:h-4 sm:w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"> 
                                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                             </svg>
@@ -1486,7 +1486,7 @@ const App = () => {
                                         </span>
                                     ) : (
                                         <span className="flex items-center">
-                                            <FileText className="h-4 w-4 sm:h-5 sm:w-5 mr-1" /> {}
+                                            <FileText className="h-4 w-4 sm:h-5 sm:w-5 mr-1" /> 
                                             Generate PDF
                                         </span>
                                     )}
@@ -1496,23 +1496,23 @@ const App = () => {
                             <div className="flex flex-col sm:flex-row justify-between space-y-4 sm:space-y-0 sm:space-x-4">
                                 {/* Plaintiff Column */}
                                 <div className="w-full sm:w-1/2">
-                                    <h5 className="text-lg sm:text-xl font-semibold text-green-700 mb-1.5 sm:mb-2">Plaintiff Times</h5> {}
+                                    <h5 className="text-lg sm:text-xl font-semibold text-green-700 mb-1.5 sm:mb-2">Plaintiff Times</h5> 
                                     {/* Removed max-h-60 and overflow-y-auto */}
-                                    <ul className="space-y-0.5 sm:space-y-1 pr-1 sm:pr-2 custom-scrollbar"> {}
+                                    <ul className="space-y-0.5 sm:space-y-1 pr-1 sm:pr-2 custom-scrollbar"> 
                                         {trialSegments.filter(s =>
                                             s.actualElapsed > 0 && s.type !== 'end' && (
                                                 (s.side === 'plaintiff' && (s.type === 'opening' || s.type === 'closing' || s.type === 'rebuttal' || s.type === 'direct' || s.type === 'redirect')) ||
                                                 (s.side === 'plaintiff' && (s.type === 'cross' || s.type === 'recross') && s.name.includes('D Witness'))
                                             )
                                         ).map((segment) => (
-                                            <li key={segment.id} className="flex justify-between items-center text-sm sm:text-md text-gray-700 py-0.5 sm:py-1 hover:bg-gray-50 rounded-md px-1 sm:px-2"> {}
+                                            <li key={segment.id} className="flex justify-between items-center text-sm sm:text-md text-gray-700 py-0.5 sm:py-1 hover:bg-gray-50 rounded-md px-1 sm:px-2"> 
                                                 <button
                                                     onClick={() => goToSegmentFromSummary(segment.id)}
                                                     className="flex-grow text-left focus:outline-none hover:text-blue-700 transition duration-150 ease-in-out"
                                                     title={`Go to ${getAbbreviatedSegmentName(segment)}`}
                                                 >
                                                     <span>{getAbbreviatedSegmentName(segment)}:</span>
-                                                    <span className="font-mono text-gray-900 ml-1.5 sm:ml-2 font-bold">{formatTime(segment.actualElapsed)}</span> {}
+                                                    <span className="font-mono text-gray-900 ml-1.5 sm:ml-2 font-bold">{formatTime(segment.actualElapsed)}</span> 
                                                 </button>
                                                 {segment.id !== currentSegment?.id && (
                                                     <button
@@ -1520,7 +1520,7 @@ const App = () => {
                                                         className="text-blue-500 hover:text-blue-700 text-xs sm:text-sm focus:outline-none flex-shrink-0 ml-1.5 sm:ml-2" // Adjusted font size and margin
                                                         title="Edit time"
                                                     >
-                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 sm:h-4 sm:w-4" viewBox="0 0 20 20" fill="currentColor"> {}
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 sm:h-4 sm:w-4" viewBox="0 0 20 20" fill="currentColor"> 
                                                             <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                                                         </svg>
                                                     </button>
@@ -1532,23 +1532,23 @@ const App = () => {
 
                                 {/* Defense Column */}
                                 <div className="w-full sm:w-1/2">
-                                    <h5 className="text-lg sm:text-xl font-semibold text-red-700 mb-1.5 sm:mb-2">Defense Times</h5> {}
+                                    <h5 className="text-lg sm:text-xl font-semibold text-red-700 mb-1.5 sm:mb-2">Defense Times</h5> 
                                     {/* Removed max-h-60 and overflow-y-auto */}
-                                    <ul className="space-y-0.5 sm:space-y-1 pr-1 sm:pr-2 custom-scrollbar"> {}
+                                    <ul className="space-y-0.5 sm:space-y-1 pr-1 sm:pr-2 custom-scrollbar"> 
                                         {trialSegments.filter(s =>
                                             s.actualElapsed > 0 && s.type !== 'end' && (
                                                 (s.side === 'defense' && (s.type === 'opening' || s.type === 'closing' || s.type === 'direct' || s.type === 'redirect')) ||
                                                 (s.side === 'defense' && (s.type === 'cross' || s.type === 'recross') && s.name.includes('P Witness'))
                                             )
                                         ).map((segment) => (
-                                            <li key={segment.id} className="flex justify-between items-center text-sm sm:text-md text-gray-700 py-0.5 sm:py-1 hover:bg-gray-50 rounded-md px-1 sm:px-2"> {}
+                                            <li key={segment.id} className="flex justify-between items-center text-sm sm:text-md text-gray-700 py-0.5 sm:py-1 hover:bg-gray-50 rounded-md px-1 sm:px-2"> 
                                                 <button
                                                     onClick={() => goToSegmentFromSummary(segment.id)}
                                                     className="flex-grow text-left focus:outline-none hover:text-blue-700 transition duration-150 ease-in-out"
                                                     title={`Go to ${getAbbreviatedSegmentName(segment)}`}
                                                 >
                                                     <span>{getAbbreviatedSegmentName(segment)}:</span>
-                                                    <span className="font-mono text-gray-900 ml-1.5 sm:ml-2 font-bold">{formatTime(segment.actualElapsed)}</span> {}
+                                                    <span className="font-mono text-gray-900 ml-1.5 sm:ml-2 font-bold">{formatTime(segment.actualElapsed)}</span> 
                                                 </button>
                                                 {segment.id !== currentSegment?.id && (
                                                     <button
@@ -1556,7 +1556,7 @@ const App = () => {
                                                         className="text-blue-500 hover:text-blue-700 text-xs sm:text-sm focus:outline-none flex-shrink-0 ml-1.5 sm:ml-2" // Adjusted font size and margin
                                                         title="Edit time"
                                                     >
-                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 sm:h-4 sm:w-4" viewBox="0 0 20 20" fill="currentColor"> {}
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 sm:h-4 sm:w-4" viewBox="0 0 20 20" fill="currentColor"> 
                                                             <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                                                         </svg>
                                                     </button>
@@ -1567,13 +1567,13 @@ const App = () => {
                                 </div>
                             </div>
 
-                            <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t-2 border-gray-200"> {}
-                                <h4 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1.5 sm:mb-2">Overall Usage:</h4> {}
-                                <div className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0 sm:space-x-4"> {}
+                            <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t-2 border-gray-200"> 
+                                <h4 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1.5 sm:mb-2">Overall Usage:</h4> 
+                                <div className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0 sm:space-x-4"> 
                                     {/* Plaintiff Overall Exam Usage Column */}
                                     <div className="w-full sm:w-1/2">
-                                        <h5 className="text-base sm:text-lg font-semibold text-green-700 mb-1.5 sm:mb-2">Plaintiff</h5> {}
-                                        <div className="space-y-0.5 sm:space-y-1 text-sm sm:text-base"> {}
+                                        <h5 className="text-base sm:text-lg font-semibold text-green-700 mb-1.5 sm:mb-2">Plaintiff</h5> 
+                                        <div className="space-y-0.5 sm:space-y-1 text-sm sm:text-base"> 
                                             <div className="flex justify-between text-green-700">
                                                 <span>Opening:</span>
                                                 <span className="font-bold">{formatTime(pOpeningUsed)} / {formatTime(trialConfig.pOpeningDuration)}</span>
@@ -1598,8 +1598,8 @@ const App = () => {
                                     </div>
                                     {/* Defense Overall Exam Usage Column */}
                                     <div className="w-full sm:w-1/2">
-                                        <h5 className="text-base sm:text-lg font-semibold text-red-700 mb-1.5 sm:mb-2">Defense</h5> {}
-                                        <div className="space-y-0.5 sm:space-y-1 text-sm sm:text-base"> {}
+                                        <h5 className="text-base sm:text-lg font-semibold text-red-700 mb-1.5 sm:mb-2">Defense</h5> 
+                                        <div className="space-y-0.5 sm:space-y-1 text-sm sm:text-base"> 
                                             <div className="flex justify-between text-red-700">
                                                 <span>Opening:</span>
                                                 <span className="font-bold">{formatTime(dOpeningUsed)} / {formatTime(trialConfig.dOpeningDuration)}</span>
@@ -1627,8 +1627,8 @@ const App = () => {
                 {/* Edit Time Modal */}
                 {showEditModal && editModalContext && (
                     <div className="fixed inset-0 bg-gray-600 bg-opacity-70 overflow-y-auto h-full w-full flex items-center justify-center z-50 p-4">
-                        <div className="bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-xs sm:max-w-md mx-auto border-2 border-gray-300 animate-fade-in-up"> {}
-                            <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 text-center"> {}
+                        <div className="bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-xs sm:max-w-md mx-auto border-2 border-gray-300 animate-fade-in-up"> 
+                            <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 text-center"> 
                                 {editModalContext.type === 'segment'
                                     ? `Edit Time for "${getAbbreviatedSegmentName(editModalContext.segment)}"`
                                     : editModalContext.type === 'budget'
@@ -1636,7 +1636,7 @@ const App = () => {
                                         : `Set Remaining Time for "${getAbbreviatedSegmentName(editModalContext.segment)}"`
                                 }
                             </h3>
-                            <div className="flex items-center justify-center space-x-3 sm:space-x-4 mb-4 sm:mb-6"> {}
+                            <div className="flex items-center justify-center space-x-3 sm:space-x-4 mb-4 sm:mb-6"> 
                                 <input
                                     type="number"
                                     min="0"
@@ -1645,7 +1645,7 @@ const App = () => {
                                     className="w-20 sm:w-24 p-2 sm:p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-center text-lg sm:text-xl font-mono" // Adjusted width and padding
                                     aria-label="Minutes"
                                 />
-                                <span className="text-2xl sm:text-3xl font-bold text-gray-600">:</span> {}
+                                <span className="text-2xl sm:text-3xl font-bold text-gray-600">:</span> 
                                 <input
                                     type="number"
                                     min="0"
@@ -1677,9 +1677,9 @@ const App = () => {
                 {/* Confirm Reset Current Modal */}
                 {showConfirmResetCurrent && (
                     <div className="fixed inset-0 bg-gray-600 bg-opacity-70 overflow-y-auto h-full w-full flex items-center justify-center z-50 p-4">
-                        <div className="bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-xs sm:max-w-sm mx-auto border-2 border-gray-300 text-center animate-fade-in-up"> {}
-                            <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Are you sure you want to reset the current phase?</h3> {}
-                            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">This will set the current phase's timer back to 0.</p> {}
+                        <div className="bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-xs sm:max-w-sm mx-auto border-2 border-gray-300 text-center animate-fade-in-up"> 
+                            <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Are you sure you want to reset the current phase?</h3> 
+                            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">This will set the current phase's timer back to 0.</p> 
                             <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4"> {/* Added flex-col and spacing for mobile */}
                                 <button
                                     onClick={confirmResetCurrentPhase}
@@ -1701,9 +1701,9 @@ const App = () => {
                 {/* Confirm Full Reset Modal */}
                 {showConfirmFullReset && (
                     <div className="fixed inset-0 bg-gray-600 bg-opacity-70 overflow-y-auto h-full w-full flex items-center justify-center z-50 p-4">
-                        <div className="bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-xs sm:max-w-sm mx-auto border-2 border-gray-300 text-center animate-fade-in-up"> {}
-                            <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Are you sure you want to perform a full trial reset?</h3> {}
-                            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">This will clear all times and return to the configuration screen.</p> {}
+                        <div className="bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-xs sm:max-w-sm mx-auto border-2 border-gray-300 text-center animate-fade-in-up"> 
+                            <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Are you sure you want to perform a full trial reset?</h3> 
+                            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">This will clear all times and return to the configuration screen.</p> 
                             <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4"> {/* Added flex-col and spacing for mobile */}
                                 <button
                                     onClick={confirmFullReset}
