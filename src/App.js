@@ -505,9 +505,10 @@ const App = () => {
                    (trialSegments[tempIndex].type === 'redirect' || trialSegments[tempIndex].type === 'recross') &&
                    trialSegments[tempIndex].witnessIndex === currentSegment.witnessIndex &&
                    trialSegments[tempIndex].side === currentSegment.side) {
+                **const currentIndex = tempIndex;
                 setTrialSegments(prevSegments => {
                     const newSegments = [...prevSegments];
-                    newSegments[tempIndex] = { ...newSegments[tempIndex], actualElapsed: 0 }; // Mark as skipped
+                    newSegments[currentIndex] = { ...newSegments[currentIndex], actualElapsed: 0 }; // Mark as skipped
                     return newSegments;
                 });
                 tempIndex++;
@@ -542,9 +543,10 @@ const App = () => {
                    trialSegments[tempIndex].type === 'recross' &&
                    trialSegments[tempIndex].witnessIndex === currentSegment.witnessIndex &&
                    trialSegments[tempIndex].side === currentSegment.side) {
+                **const currentIndex = tempIndex;
                 setTrialSegments(prevSegments => {
                     const newSegments = [...prevSegments];
-                    newSegments[tempIndex] = { ...newSegments[tempIndex], actualElapsed: 0 }; // Mark as skipped
+                    newSegments[currentIndex] = { ...newSegments[currentIndex], actualElapsed: 0 }; // Mark as skipped
                     return newSegments;
                 });
                 tempIndex++;
