@@ -139,7 +139,7 @@ const App = () => {
     }, [
         trialConfig.pOpeningDuration, trialConfig.dOpeningDuration,
         trialConfig.plaintiffWitnessCount, trialConfig.defenseWitnessCount,
-        trialConfig.pClosingDuration, trialConfig.dClosingDuration, trialConfig.maxRebuttalDuration
+        trialConfig.pClosingDuration, trialConfig.dClosingDuration
     ]);
 
     /**
