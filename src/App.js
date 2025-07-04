@@ -538,7 +538,7 @@ const App = () => {
         } else {
             // User chose No, skip Recross for this witness
             // Find the next segment that is NOT a recross for the current witness
-            let tempIndex = currentSegmentIndex + 1;
+            let tempIndex = currentSegmentIndex + 2;
             while (tempIndex < trialSegments.length &&
                 trialSegments[tempIndex].type === 'recross' &&
                 trialSegments[tempIndex].witnessIndex === currentSegment.witnessIndex &&
